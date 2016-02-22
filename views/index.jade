@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		meta(http-equiv="content-type",content="text/html; charset=UTF-8")
+		meta(name="robots",content="noindex, nofollow")
+		meta(name="googlebot",content="noindex, nofollow")
+		script(type="text/javascript",src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.js")
+		link(rel="stylesheet",type="text/css",href="/css/result-light.css")
+		link(rel="stylesheet",type="text/css",href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css")
+		script(type="text/javascript",src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+		script(type="text/javascript",src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js")
+		script(type="text/javascript",src="js/script.js")
+
+	body(ng-app="mymodal")
+		div(ng-controller="MainCtrl",class="container")
+			h1 Modal example
+			button(ng-click="toggleModal()",class="btn btn-default") Load image
+
+			modal(title="Login form",visible="showModal")
+				form(role="form")
+					div(class="form-group")
+						label(for="email") Email address
+						input(type="email",class="form-control",id="email",placeholder="Enter email")
+					div(class="form-group")
+						label(for="password") Password
+						input(type="password",class="form-control",id="password",placeholder="Password")
+					button(type="submit",class="btn btn-default") Submit

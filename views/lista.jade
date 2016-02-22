@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		meta(http-equiv="content-type",content="text/html; charset=UTF-8")
+		meta(name="robots",content="noindex, nofollow")
+		meta(name="googlebot",content="noindex, nofollow")
+		script(type="text/javascript",src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.js")
+		link(rel="stylesheet",type="text/css",href="/css/result-light.css")
+		link(rel="stylesheet",type="text/css",href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css")
+		script(type="text/javascript",src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+		script(type="text/javascript",src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js")
+		script(type="text/javascript",src="js/lista.js")
+
+	body(ng-app="mymodal")
+		div(ng-controller="MainCtrl",class="container")
+			table(ng-show="images.images.length > 0")
+				tr(ng-repeat="img in images.images")
+					td
+						a(href="/img/{{img.oldname}}") {{img._id}}
+					td
+						img(ng-src="/img/{{img._id}}/100")
+					td
+						| {{img.ip}}
+					td
+						button(ng-click="elimina(img._id)") elimina
+			p(ng-show="images.images.length == 0") Nessuna immagine presente
